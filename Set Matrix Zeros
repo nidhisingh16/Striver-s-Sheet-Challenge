@@ -1,0 +1,27 @@
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+from typing import List
+
+def setZeros(mat: List[List[int]]) -> None:
+	# Write your code here.
+    r=set()
+    c=set()
+    rl=len(mat)
+    cl=len(mat[0])
+    for i in range(rl):
+        for j in range(cl):
+            if mat[i][j]==0:
+                r.add(i)
+                c.add(j)
+    for i in range(rl):
+        if i in r:
+            for j in range(cl):
+                mat[i][j]=0
+        else:
+            for j in range(cl):
+                if j in c:
+                    mat[i][j]=0
+    return mat
